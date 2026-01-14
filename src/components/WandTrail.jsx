@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const WandTrail = () => {
   const [trail, setTrail] = useState([]);
+  const [wandPos, setWandPos] = useState(null);
+  const [isTouching, setIsTouching] = useState(false);
 
   useEffect(() => {
     let sparkCounter = 0;
@@ -31,20 +33,40 @@ const WandTrail = () => {
       if (e.touches && e.touches.length > 0) {
         const touch = e.touches[0];
         createSpark(touch.clientX, touch.clientY);
+        // Show wand position on mobile
+        setWandPos({ x: touch.clientX, y: touch.clientY });
+        setIsTouching(true);
       }
+    };
+
+    const handleTouchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        setWandPos({ x: touch.clientX, y: touch.clientY });
+        setIsTouching(true);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      setIsTouching(false);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd);
     
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, pointerEvents: 'none', zIndex: 9999 }}>
+      {/* Sparkles that follow movement */}
       {trail.map((spark) => (
         <div
           key={spark.id}
@@ -61,6 +83,25 @@ const WandTrail = () => {
           }}
         />
       ))}
+
+      {/* Visible Wand Pointer on Mobile */}
+      {isTouching && wandPos && (
+        <div
+          style={{
+            position: 'absolute',
+            left: wandPos.x - 12,
+            top: wandPos.y - 12,
+            width: '24px',
+            height: '24px',
+            backgroundImage: 'url(/wand.svg)',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.9,
+            filter: 'drop-shadow(0 0 8px #ffd700)',
+          }}
+        />
+      )}
+
       <style>
         {`
           @keyframes fadeSpark {
