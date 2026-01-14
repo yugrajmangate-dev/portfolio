@@ -12,20 +12,20 @@ const Contact = () => {
   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
 
   return (
-    <div className="page" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '3rem', marginBottom: '10px' }}>Owl Post</h1>
-      <p style={{ fontStyle: 'italic', marginBottom: '50px', color: '#c5a009' }}>
+    <div className="page" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto', padding: '20px' }}>
+      <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: '10px' }}>Owl Post</h1>
+      <p style={{ fontStyle: 'italic', marginBottom: '50px', color: '#c5a009', fontSize: 'clamp(0.9rem, 3vw, 1rem)' }}>
         "Send a message via the floo network."
       </p>
       
       <div className="project-grid" style={{ gridTemplateColumns: '1fr' }}>
         
         {/* --- CARD 1: GMAIL DIRECT LINK --- */}
-        <div className="magic-card" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div className="magic-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', textAlign: 'center' }}>
           <FaGoogle size={40} color="#c5a009" />
-          <div style={{ textAlign: 'left' }}>
-            <h3>Howler (Email)</h3>
-            <p style={{ fontSize: '1rem', marginBottom: '10px' }}>
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <h3 style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)' }}>Howler (Email)</h3>
+            <p style={{ fontSize: 'clamp(0.9rem, 3vw, 1rem)', marginBottom: '10px' }}>
               Send a direct message via Gmail.
             </p>
             <a href={gmailLink} target="_blank" rel="noopener noreferrer" className="btn-magic" style={{ fontSize: '0.9rem', padding: '8px 20px' }}>
@@ -35,11 +35,11 @@ const Contact = () => {
         </div>
 
         {/* --- CARD 2: PHONE DIALER --- */}
-        <div className="magic-card" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div className="magic-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', textAlign: 'center' }}>
           <FaPhoneAlt size={35} color="#c5a009" />
-          <div style={{ textAlign: 'left' }}>
-            <h3>Floo Call (Phone)</h3>
-            <p style={{ fontSize: '1rem', marginBottom: '10px' }}>
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <h3 style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)' }}>Floo Call (Phone)</h3>
+            <p style={{ fontSize: 'clamp(0.9rem, 3vw, 1rem)', marginBottom: '10px' }}>
               Summon me on your mobile device.
             </p>
             <a href={`tel:${phoneNumber}`} className="btn-magic" style={{ fontSize: '0.9rem', padding: '8px 20px' }}>
@@ -49,13 +49,13 @@ const Contact = () => {
         </div>
 
         {/* --- CARD 3: LOCATION --- */}
-        <div className="magic-card" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div className="magic-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', textAlign: 'center' }}>
           <FaMapMarkerAlt size={40} color="#c5a009" />
-          <div style={{ textAlign: 'left' }}>
-            <h3>Location</h3>
-            <p style={{ fontSize: '1.1rem', color: '#e0d6ff' }}>
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <h3 style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)' }}>Location</h3>
+            <p style={{ fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', color: '#e0d6ff', marginBottom: '0' }}>
               Pimpri-Chinchwad, Pune <br/>
-              <span style={{ fontSize: '0.9rem', color: '#888' }}>(Maharashtra Sector 9¾)</span>
+              <span style={{ fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)', color: '#888' }}>(Maharashtra Sector 9¾)</span>
             </p>
           </div>
         </div>

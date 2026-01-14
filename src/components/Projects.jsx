@@ -23,16 +23,16 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="page">
-      <h1 style={{ textAlign: 'center', marginBottom: '10px' }}>My Spellbook</h1>
-      <p style={{ textAlign: 'center', marginBottom: '50px', color: '#aaa' }}>Recent magical artifacts I have created.</p>
+    <div className="page" style={{ padding: '20px' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '10px', fontSize: 'clamp(2rem, 6vw, 3rem)' }}>My Spellbook</h1>
+      <p style={{ textAlign: 'center', marginBottom: '50px', color: '#aaa', fontSize: 'clamp(0.9rem, 3vw, 1rem)' }}>Recent magical artifacts I have created.</p>
       
       <div className="project-grid">
         {projects.map((p, index) => (
           <div key={index} className="magic-card">
-            <h3>{p.title}</h3>
-            <p style={{ margin: '15px 0', color: '#ddd' }}>{p.desc}</p>
-            <div style={{ marginBottom: '20px', fontFamily: 'monospace', color: '#ffd700' }}>
+            <h3 style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)' }}>{p.title}</h3>
+            <p style={{ margin: '15px 0', color: '#ddd', fontSize: 'clamp(0.9rem, 3vw, 1rem)' }}>{p.desc}</p>
+            <div style={{ marginBottom: '20px', fontFamily: 'monospace', color: '#ffd700', fontSize: 'clamp(0.8rem, 2.5vw, 0.95rem)' }}>
               {p.tech.join(" • ")}
             </div>
             <a href={p.link} target="_blank" className="btn-magic">View Code</a>
