@@ -3,7 +3,7 @@ import { FaGoogle, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa'; // Ensure
 
 const Contact = () => {
   // REPLACE THIS with your real phone number
-  const phoneNumber = "+919999999999"; 
+  const phoneNumber = "+917263817870"; 
   
   // REPLACE THIS with your real email
   const emailAddress = "your.email@example.com";
