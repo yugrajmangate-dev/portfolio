@@ -4,11 +4,13 @@ const WandTrail = () => {
   const [trail, setTrail] = useState([]);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    let sparkCounter = 0;
+
+    const createSpark = (x, y) => {
       const newSpark = {
-        x: e.clientX,
-        y: e.clientY,
-        id: Date.now()
+        x: x,
+        y: y,
+        id: sparkCounter++
       };
 
       setTrail((prev) => [...prev, newSpark]);
@@ -19,8 +21,26 @@ const WandTrail = () => {
       }, 500);
     };
 
+    // Handle Mouse Movement (Desktop)
+    const handleMouseMove = (e) => {
+      createSpark(e.clientX, e.clientY);
+    };
+
+    // Handle Touch Movement (Mobile/Tablet)
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        createSpark(touch.clientX, touch.clientY);
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
   }, []);
 
   return (
