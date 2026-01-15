@@ -135,7 +135,8 @@ nav {
 .typewriter-text {
   color: #FFD700;
   position: relative;
-  display: inline-block;
+  display: inline;
+  letter-spacing: normal;
 }
 
 .wand-cursor {
@@ -144,6 +145,7 @@ nav {
   font-weight: bold;
   margin: 0;
   padding: 0;
+  margin-left: -3px;
   animation: blink 1s infinite;
 }
 
