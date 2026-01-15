@@ -52,7 +52,7 @@ const Hero = () => {
       </h1>
       
       <h3 className="magic-subtitle">
-        "{displayText}"<span className="wand-cursor">|</span>
+        "<span className="typewriter-text">{displayText}<span className="wand-cursor">|</span></span>"
       </h3>
       
       <p style={{ maxWidth: '650px', margin: '0 auto 50px auto', fontSize: 'clamp(1rem, 4vw, 1.3rem)', color: '#aaa' }}>

@@ -132,12 +132,18 @@ nav {
   font-style: italic;
 }
 
-.wand-cursor {
+.typewriter-text {
+  color: #FFD700;
+  position: relative;
   display: inline-block;
+}
+
+.wand-cursor {
+  display: inline;
   color: #FFD700;
   font-weight: bold;
-  margin-left: 8px;
-  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
   animation: blink 1s infinite;
 }
 
