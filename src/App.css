@@ -215,6 +215,131 @@ p { font-size: 1.2rem; line-height: 1.8; color: #dcdcdc; }
 
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
+/* ==================== SPELL CARDS SECTION ==================== */
+/* Container for all Spell Cards */
+.spells-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* Individual Spell Card Design */
+.spell-card {
+    background: rgba(10, 25, 47, 0.85); /* Dark mystical background */
+    border: 1px solid #FFD700;          /* Gold Border */
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Magical shimmer effect on the card */
+.spell-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.spell-card:hover::before {
+    left: 100%;
+}
+
+/* Hover Effect: The Card Floats and Glows */
+.spell-card:hover {
+    transform: translateY(-10px); /* Moves up slightly */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1); /* Gold Glow */
+    border-color: #FFD700;
+}
+
+/* Project Title */
+.spell-title {
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-family: var(--wizard-font);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Project Description */
+.spell-desc {
+    color: #ccd6f6;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Highlight text (special feature) */
+.spell-highlight {
+    color: #64ffda;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #64ffda;
+}
+
+/* "Ingredients" (Tech Stack) */
+.spell-ingredients {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    color: #64ffda; /* Cyan/Green for tech terms */
+    font-size: 0.9rem;
+}
+
+/* Links Container */
+.spell-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Spell Card Buttons */
+.cast-btn, .incantation-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: var(--wizard-font);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.cast-btn {
+    background: #FFD700;
+    color: #0a192f; /* Dark text on gold */
+    border: 2px solid #FFD700;
+}
+
+.incantation-btn {
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    background: transparent;
+}
+
+.cast-btn:hover {
+    background: #FFC700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.incantation-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+}
+
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
   /* Navigation */
@@ -289,6 +414,38 @@ p { font-size: 1.2rem; line-height: 1.8; color: #dcdcdc; }
     gap: 20px;
   }
 
+  /* Spell Cards Grid */
+  .spells-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 0;
+  }
+
+  .spell-card {
+    padding: 20px;
+  }
+
+  .spell-title {
+    font-size: 1.3rem;
+  }
+
+  .spell-desc {
+    font-size: 0.95rem;
+  }
+
+  .spell-ingredients {
+    font-size: 0.85rem;
+  }
+
+  .spell-links {
+    flex-direction: column;
+  }
+
+  .cast-btn, .incantation-btn {
+    width: 100%;
+    text-align: center;
+  }
+
   /* Page spacing */
   .page {
     padding-top: 30px !important;
@@ -360,6 +517,33 @@ p { font-size: 1.2rem; line-height: 1.8; color: #dcdcdc; }
 
   .project-grid {
     gap: 15px;
+  }
+
+  /* Spell Cards for Extra Small Devices */
+  .spells-grid {
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .spell-card {
+    padding: 15px;
+  }
+
+  .spell-title {
+    font-size: 1.1rem;
+  }
+
+  .spell-desc {
+    font-size: 0.9rem;
+  }
+
+  .spell-ingredients {
+    font-size: 0.8rem;
+  }
+
+  .cast-btn, .incantation-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
   }
 
   .page {
