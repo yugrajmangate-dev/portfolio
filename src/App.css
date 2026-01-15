@@ -13,6 +13,12 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Prevent layout shift from scrollbar appearing/disappearing */
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 /* --- CUSTOM CURSOR (SVG Method) --- */
 /* --- ULTIMATE HARRY POTTER CURSOR --- */
 /* --- CUSTOM CURSOR (SVG Files) --- */
