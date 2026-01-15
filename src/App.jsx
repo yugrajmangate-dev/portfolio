@@ -5,8 +5,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import MagicParticles from './components/MagicParticles';
 import WandTrail from './components/WandTrail';
-import FlyingOwl from './components/FlyingOwl';
-import FlyingBroom from './components/FlyingBroom';
 import './App.css';
 
 const NavBar = () => {
@@ -29,12 +27,6 @@ function App() {
         {/* Magical Background Elements */}
         <MagicParticles />
         <WandTrail />
-        
-        {/* Flying Magical Creatures */}
-        <FlyingOwl delay={0} direction="left-to-right" duration={18} />
-        <FlyingOwl delay={3} direction="right-to-left" duration={20} />
-        <FlyingBroom delay={1} duration={22} />
-        <FlyingBroom delay={5} duration={25} />
         
         {/* Navigation Bar */}
         <NavBar />
