@@ -1,16 +1,46 @@
-# React + Vite
+# Yugraj.Wiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Harry Potter inspired portfolio built with React, Vite, and `react-router-dom`.
 
-Currently, two official plugins are available:
+## Local setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
 
-## React Compiler
+```bash
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Add your background video to `public/hogwarts.mp4`.
 
-## Expanding the ESLint configuration
+Optional fallback poster:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+public/hogwarts-poster.jpg
+```
+
+3. Start the dev server:
+
+```bash
+npm run dev
+```
+
+## Video guidance
+
+- Format: H.264 MP4
+- Recommended size: `1280x720` or `1920x1080`
+- Target filesize: under `20 MB` when possible
+
+Compress a source video with:
+
+```bash
+ffmpeg -i input.mp4 -c:v libx264 -crf 28 -vf scale=1280:720 -an public/hogwarts.mp4
+```
+
+## Main features
+
+- Full-screen Hogwarts video background with layered overlays
+- Elder wand cursor with glow, spark trail, and ember particles
+- Floating candles and drifting magical dust
+- Particle network canvas reacting to pointer movement
+- Four routed sections: home, about, projects, and contact
+- Responsive layout with reduced-motion support
