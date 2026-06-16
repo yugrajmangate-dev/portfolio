@@ -41,14 +41,18 @@ export function WandCursor() {
         {clicked && <div className="wand-pulse" />}
       </div>
       <img
-        src={`${import.meta.env.BASE_URL}wand.svg`}
+        src={`${import.meta.env.BASE_URL}wand.png`}
         alt=""
         className="elder-wand"
         style={{
-          transform: `translate(${position.x - 8}px, ${position.y - 8}px)`,
+          // offset to perfectly align the tip of the image with the cursor
+          transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
           opacity: position.x > 0 ? 1 : 0,
-          width: "32px",
-          height: "32px"
+          width: "150px",
+          height: "150px",
+          // The image might need some rotation if it's not pointing exactly at top-left
+          rotate: "-10deg",
+          transformOrigin: "top left"
         }}
       />
     </div>
