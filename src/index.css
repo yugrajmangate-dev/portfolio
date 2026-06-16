@@ -210,9 +210,9 @@ select {
 }
 
 .navbar.scrolled {
-  background: transparent;
-  border-bottom-color: transparent;
-  backdrop-filter: none;
+  background: rgba(8, 9, 13, 0.45);
+  border-bottom-color: rgba(255, 215, 0, 0.15);
+  backdrop-filter: blur(12px);
 }
 
 .navbar-inner {
