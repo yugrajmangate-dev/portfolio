@@ -76,24 +76,6 @@ const PROJECTS = [
     icon: "🤖",
     github: "https://github.com/yugrajmangate-dev",
   },
-  {
-    title: "AdMesh SDK",
-    desc: "A non-intrusive ad integration SDK for publishers, built as a seed-funded startup experiment.",
-    tech: ["JavaScript", "Node.js", "SDK Design"],
-    badge: "Startup · ₹10K Seed",
-    badgeColor: "#ffd700",
-    icon: "🚀",
-    github: "https://github.com/AdMesh-sdk",
-  },
-  {
-    title: "ESP32 Biometric Access",
-    desc: "A hardware prototype using fingerprint sensors and a real-time display for secure access control.",
-    tech: ["ESP32", "C/C++", "R307", "ST7789"],
-    badge: "Hardware Prototype",
-    badgeColor: "#8cc84b",
-    icon: "🔐",
-    github: "https://github.com/yugrajmangate-dev",
-  },
 ];
 
 const PROJECT_FILTERS = ["All", "Next.js", "Python", "C/C++", "AI/ML", "Cybersecurity"];
@@ -317,7 +299,7 @@ function HomePage() {
         </Reveal>
 
         <Reveal as="p" className="hero-desc" delay={260}>
-          2nd-year CSE at <strong>I²IT Pune</strong> · CGPA <strong>9.43</strong> · Interning at <strong>CyberXDelta</strong> · Co-founder of <strong>AdMesh</strong> · Ciphathon 2026 Champion <span className="gold">₹50K</span>
+          2nd-year CSE at <strong>I²IT Pune</strong> · CGPA <strong>9.43</strong>
         </Reveal>
 
         <Reveal className="hero-badges" delay={340}>
