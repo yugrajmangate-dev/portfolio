@@ -46,12 +46,10 @@ export function WandCursor() {
         className="elder-wand"
         style={{
           // offset to perfectly align the tip of the image with the cursor
-          transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
+          transform: `translate(${position.x - 2}px, ${position.y - 4}px)`,
           opacity: position.x > 0 ? 1 : 0,
-          width: "150px",
-          height: "150px",
-          // The image might need some rotation if it's not pointing exactly at top-left
-          rotate: "-10deg",
+          width: "100px",
+          height: "100px",
           transformOrigin: "top left"
         }}
       />
