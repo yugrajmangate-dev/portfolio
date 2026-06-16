@@ -127,7 +127,6 @@ function HogwartsBackground() {
         loop
         playsInline
         src={`${BASE_URL}hogwarts.mp4`}
-        poster={`${BASE_URL}hogwarts-poster.jpg`}
       />
       <div className="hogwarts-overlay" />
     </div>
@@ -539,8 +538,8 @@ export default function App() {
       <WandCursor />
       <ScrollProgress />
       <HogwartsBackground />
+      <Navbar />
       <div className="app-shell">
-        <Navbar />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />

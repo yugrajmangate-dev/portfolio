@@ -134,8 +134,7 @@ export function WandCursor() {
         alt=""
         className="elder-wand"
         style={{
-          // Tweak these offsets until tip perfectly aligns
-          transform: `translate(${position.x - 14}px, ${position.y - 14}px)`,
+          transform: `translate(${position.x}px, ${position.y}px)`,
           opacity: position.x > 0 ? 1 : 0,
           width: "100px",
           height: "100px",
